@@ -181,8 +181,8 @@ RUN set -ex; \
 COPY osc/*.sh osc/upgrade.exclude /
 COPY osc/config/* /usr/src/nextcloud/config/
 
-VOLUME [ "/data" ]
-ENV NEXTCLOUD_DATA_DIR /data
+VOLUME [ "/var/www/html" ]
+ENV NEXTCLOUD_DATA_DIR /var/www/html/data
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
